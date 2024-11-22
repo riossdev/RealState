@@ -2,11 +2,13 @@
 
 const formLogin = (req, res) =>{
   res.render('auth/login', {
-    autenticado: true
+    pagina: 'Iniciar Sesión',
   })
 }
 const formRegistro = ( req, res) =>{
-  res.render('auth/registro')
+  res.render('auth/registro', {
+    pagina: 'Crear Cuenta'
+  })
 }
 
 export {
