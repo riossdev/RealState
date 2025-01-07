@@ -39,6 +39,8 @@ const registro = async( req, res) =>{
       }
     })
   }
+
+ 
   
   //verificar que el usuario no exista
   const { nombre, email, password } = req.body
@@ -55,8 +57,15 @@ const registro = async( req, res) =>{
     })
   }
 
-  const usuario  = await User.create(req.body)
-  res.json(usuario)
+  // const usuario  = await User.create(req.body)
+  // res.json(usuario)
+   //Almacenar Un usuario
+   await User.create({
+    nombre,
+    email,
+    password,
+    token: '123',
+  })
   
 }
 
